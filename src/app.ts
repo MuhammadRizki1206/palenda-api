@@ -11,18 +11,21 @@ import cors from "cors";
 environment.config();
 
 const app = express();
-const PORT = process.env.SERVER_PORT_DEV;
+const PORT = process.env.SERVER_PORT_DEV || 8000; // Railway mengatur PORT otomatis
+
+// Menambahkan origin untuk frontend Vercel
+const frontendOrigin = process.env.FRONTEND_URL || "http://localhost:3000"; // Default untuk development
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
-    credentials: true,
+    origin: [frontendOrigin, "https://palenda-apps-sync.vercel.app"], // Menambahkan origin Vercel
+    credentials: true, // Jika kamu menggunakan cookies atau session
   })
 );
 
 app.use(express.json());
 
-// jalur utama dari api
+// Jalur utama dari API
 app.use("/api/auth", authRouter);
 app.use("/api", historyRouter);
 app.use("/api", culinaryRouter);
