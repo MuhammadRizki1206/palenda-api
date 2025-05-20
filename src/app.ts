@@ -18,7 +18,11 @@ const frontendOrigin = process.env.FRONTEND_URL || "http://localhost:3000"; // D
 
 app.use(
   cors({
-    origin: [frontendOrigin, "https://palenda-apps-sync.vercel.app"], // Menambahkan origin Vercel
+    origin: [
+      frontendOrigin,
+      "https://palenda-apps-sync.vercel.app",
+      "https://palenda-apps.vercel.app",
+    ], // Menambahkan origin Vercel
     credentials: true, // Jika kamu menggunakan cookies atau session
   })
 );

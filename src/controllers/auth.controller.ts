@@ -9,7 +9,6 @@ export class AuthController {
     this.authService = new AuthService();
   }
 
-  // Login
   async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
@@ -19,6 +18,7 @@ export class AuthController {
 
       if (result.success) {
         const { accessToken, refreshToken, admin } = result;
+
         res.status(200).send({
           data: {
             user: admin,
