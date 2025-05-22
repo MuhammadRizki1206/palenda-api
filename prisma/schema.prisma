@@ -66,7 +66,7 @@ model UMKMProduct {
   price       Decimal
   location    String
   logo        String
-  stock       Int      @default(0) // ➕ Menambahkan kolom stock
+  stock      Decimal // ➕ Menambahkan kolom stock
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
