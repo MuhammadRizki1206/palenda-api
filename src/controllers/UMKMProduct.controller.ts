@@ -31,6 +31,7 @@ export class UMKMProductController {
         description,
         stock
       );
+      console.log(newProduct);
 
       res.status(201).json({
         message: "UMKM Product created successfully",
@@ -110,8 +111,8 @@ export class UMKMProductController {
         price,
         location,
         logo,
-        description,
-        stock // ✅ pastikan stock berupa number
+        stock, // ✅ pastikan stock berupa number
+        description
       );
 
       if (updatedProduct) {

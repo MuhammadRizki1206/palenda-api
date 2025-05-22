@@ -30,6 +30,7 @@ export class UMKMProductService {
       });
       return newUMKMProduct;
     } catch (error) {
+      console.error(error);
       throw new Error("Failed to create umkm product");
     }
   }
