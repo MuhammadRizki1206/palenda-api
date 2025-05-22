@@ -22,6 +22,7 @@ app.use(
       frontendOrigin,
       "https://palenda-apps-sync.vercel.app",
       "https://palenda-apps.vercel.app",
+      "http://localhost:3000",
     ], // Menambahkan origin Vercel
     credentials: true, // Jika kamu menggunakan cookies atau session
   })

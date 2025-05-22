@@ -13,6 +13,7 @@ export class UMKMProductService {
     price: number,
     location: string,
     logo: string,
+    stock: number,
     description: string
   ): Promise<UMKMProduct> {
     try {
@@ -22,6 +23,7 @@ export class UMKMProductService {
           name,
           price,
           location,
+          stock,
           logo,
           description,
         },
@@ -55,6 +57,7 @@ export class UMKMProductService {
     price: number,
     location: string,
     logo: string,
+    stock: number,
     description: string
   ): Promise<UMKMProduct | null> {
     try {
@@ -65,6 +68,7 @@ export class UMKMProductService {
           name,
           price,
           location,
+          stock,
           logo,
           description,
         },

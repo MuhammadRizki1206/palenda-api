@@ -30,6 +30,7 @@ export interface UMKMProduct {
   name: string;
   description: string;
   price: number;
+  stock: number;
   location: string;
   logo: string | null;
 }

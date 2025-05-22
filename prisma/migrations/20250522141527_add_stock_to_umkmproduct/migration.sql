@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "UMKMProduct" ADD COLUMN     "stock" INTEGER NOT NULL DEFAULT 0;

@@ -9,7 +9,7 @@ const uMKMProductService = new UMKMProductService();
 export class UMKMProductController {
   async createUMKMProduct(req: Request, res: Response) {
     try {
-      const { name, price, location, logo, description } = req.body;
+      const { name, price, location, logo, description, stock } = req.body;
       const file = req.file;
 
       // upload image to cloudinary
@@ -28,7 +28,8 @@ export class UMKMProductController {
         price,
         location,
         logo,
-        description
+        description,
+        stock
       );
 
       res.status(201).json({
@@ -90,7 +91,7 @@ export class UMKMProductController {
 
   async updateUMKMProduct(req: Request, res: Response) {
     const { id } = req.params;
-    const { name, price, location, logo, description } = req.body;
+    const { name, price, location, logo, description, stock } = req.body;
     const file = req.file;
     try {
       let image = "";
@@ -109,7 +110,8 @@ export class UMKMProductController {
         price,
         location,
         logo,
-        description
+        description,
+        stock // ✅ pastikan stock berupa number
       );
 
       if (updatedProduct) {
@@ -132,6 +134,7 @@ export class UMKMProductController {
       });
     }
   }
+
   async deleteUMKMProduct(req: Request, res: Response) {
     const { id } = req.params;
     try {
