@@ -9,7 +9,8 @@ const uMKMProductService = new UMKMProductService();
 export class UMKMProductController {
   async createUMKMProduct(req: Request, res: Response) {
     try {
-      const { name, price, location, logo, description, stock } = req.body;
+      const { name, location, logo, description, price, stock } = req.body;
+
       const file = req.file;
 
       // upload image to cloudinary
@@ -28,8 +29,8 @@ export class UMKMProductController {
         price,
         location,
         logo,
-        description,
-        stock
+        stock,
+        description
       );
       console.log(newProduct);
 
